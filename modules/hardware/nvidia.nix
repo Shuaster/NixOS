@@ -19,4 +19,14 @@
 
     #package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  boot.kernelParams = [
+    "nvidia-drm.modeset=1"
+  ];
+
+  environment.sessionVariables = {
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+    GBM_BACKEND = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 }
