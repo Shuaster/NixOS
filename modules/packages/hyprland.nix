@@ -8,14 +8,17 @@
   };
 
   environment.systemPackages = with pkgs; [
-    hypridle
-    hyprlock
-    hyprpaper
-    hyprshot
-    hyprviz
+    hypridle # Idle Daemon
+    hyprlock # Lock Screen
+    hyprpaper # Wallpaper Service
+    hyprshot # Screenshot Service
+    hyprviz # GUI Hyprland Configurator
+
+    kitty # Hyprland Terminal Emulator
     
-    rofi
-    swaynotificationcenter
-    waybar
+    libnotify # Notification Library
+    rofi # Application Launcher
+    swaynotificationcenter # Notification Daemon
+    waybar # Status Bar
   ];
 }
