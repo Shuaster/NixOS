@@ -4,6 +4,6 @@
   environment.systemPackages = with pkgs; [
     kdePackages.dolphin
     nautilus
-    thunar
+    xfce.thunar
   ];
 }
