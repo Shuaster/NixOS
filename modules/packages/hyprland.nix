@@ -15,7 +15,7 @@
     hyprviz
     
     rofi
-    swaync
+    swaynotificationcenter
     waybar
   ];
 }
