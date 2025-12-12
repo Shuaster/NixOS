@@ -10,6 +10,12 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+#  services.xserver = {
+ #   enable = true;
+  #  displayManager.gdm.enable = true;
+   # desktopManager.gnome.enable = true;
+ # };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.joshua = {
     isNormalUser = true;
