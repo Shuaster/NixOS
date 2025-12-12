@@ -4,15 +4,18 @@
   # Enable Nvidia Drivers
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  # Enable Wayland Support
-  hardware.opengl.enable = true;
-  hardware.opengl.extraPackages = with pkgs; [ nvidia_x11 ];
+  hardware.nvidia = {
+    modesettings.enable = true;
 
-  # Enable Modesettings
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
+    # Disable Power Management
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
 
-  environment.sessionVariables = {
-    # Use GBM Backend
-    WLR_BACKENDS = "gbm";
+    open = true;
+
+    # Enable Nvidia settings menu
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 }
