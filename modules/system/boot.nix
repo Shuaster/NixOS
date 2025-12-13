@@ -14,4 +14,18 @@
 
   # Use the latest Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # Autologin into Hyprland using GreetD
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "Hyprland";
+        user = "joshua";
+      };
+
+      # Maybe change this so you're able to exit Hyprland and stay in a TTY
+      default_session = initial_session;
+    };
+  };
 }

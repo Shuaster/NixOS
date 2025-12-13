@@ -20,6 +20,7 @@
           ./modules/hardware/default.nix
           ./modules/hardware/nvidia.nix
           ./modules/packages/default.nix
+          ./modules/packages/elgato.nix
           ./modules/system/default.nix
         ];
       };
