@@ -11,8 +11,6 @@
     # Editors
     vscodium
 
-    firefox
-
     # Useful Utilities
     tree
     unzip
