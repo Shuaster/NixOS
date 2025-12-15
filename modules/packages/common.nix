@@ -11,6 +11,9 @@
     # Editors
     vscodium
 
+    bitwarden-desktop
+    kdePackages.kdeconnect-kde
+
     # Useful Utilities
     tree
     unzip
