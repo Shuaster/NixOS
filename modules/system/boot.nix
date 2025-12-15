@@ -19,13 +19,10 @@
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session = {
-        command = "Hyprland";
+      default_session = {
         user = "joshua";
+        command = "Hyprland";
       };
-
-      # Maybe change this so you're able to exit Hyprland and stay in a TTY
-      default_session = initial_session;
     };
   };
 }
