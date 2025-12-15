@@ -25,6 +25,14 @@
           ./modules/packages/gaming.nix
 
           ./modules/system/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.joshua = import ./home-manager/desktop/default.nix;
+          }
         ];
       };
 
@@ -36,6 +44,14 @@
           ./modules/hardware/default.nix
           ./modules/packages/default.nix
           ./modules/system/default.nix
+
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.joshua = import ./home-manager/laptop/default.nix;
+          }
         ];
       };
 
