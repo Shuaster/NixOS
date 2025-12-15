@@ -3,6 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     discord
-    signal-desktop
+    signal-desktop # Privacy Focused Messaging
   ];
 }
