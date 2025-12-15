@@ -27,12 +27,14 @@
           font_color = "rgb(200, 200, 200)";
           font_family = "JetBrains Mono";
 
-          inner_color = "rgba(255, 255, 255, 0.1)";
+          inner_color = "rgba(64, 64, 64, 0.5)";
           outer_color = "rgba(255, 255, 255, 0)";
 
-          position = "0, -200";
+          capslock_color = "rgba(220, 50, 50, 0.75)";
+
+          position = "0, 200";
           halign = "center";
-          valign = "center";
+          valign = "bottom";
           fade_on_empty = false;
         }
       ];
@@ -42,10 +44,59 @@
         {
           monitor = "DP-1";
 
+          text = "$TIME12";
+
           font_family = "JetBrains Mono Extrabold";
           font_size = "150";
 
-          text = "$TIME12";
+          position = "0, 200";
+          halign = "center";
+          valign = "center";
+        }
+
+        # Reboot
+        {
+          monitor = "DP-1";
+
+          text = "";
+          onclick = "reboot now";
+
+          font_size = "30";
+          font_family = "Font Awesome 7 Free Solid";
+
+          position = "-200, 100";
+          halign = "center";
+          valign = "bottom";
+        }
+
+        # Power Off
+        {
+          monitor = "DP-1";
+
+          text = "";
+          onclick = "shutdown now";
+
+          font_size = "30";
+          font_family = "Font Awesome 7 Free Solid";
+
+          position = "0, 100";
+          halign = "center";
+          valign = "bottom";
+        }
+
+        # Sleep
+        {
+          monitor = "DP-1";
+
+          text = "";
+          onclick = "systemctl suspend";
+
+          font_size = "30";
+          font_family = "Font Awesome 7 Free Solid";
+
+          position = "200, 100";
+          halign = "center";
+          valign = "bottom";
         }
       ];
     };
