@@ -10,8 +10,8 @@
       };
 
       background = {
-        path = "screenshot";
-        blur_passes = 3;
+        path = "/home/joshua/Pictures/Wallpapers/casseteCover.png";
+        blur_passes = 2;
       };
 
       input-field = [

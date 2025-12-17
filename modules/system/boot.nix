@@ -8,7 +8,8 @@
   # Skip the bootloader menu
   boot.loader.timeout = 0;
 
-  boot.kernelParams = [ "quiet" "loglevel=0" "splash" "systemd.show_status=false" ];
+  # (pcie_aspm=off) is to help fix sleep issues
+  boot.kernelParams = [ "quiet" "loglevel=0" "splash" "systemd.show_status=false" "pcie_aspm=off" ];
 
   boot.plymouth.enable = true;
 

@@ -8,11 +8,11 @@
     modesetting.enable = true;
 
     # Disable Power Management
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
 
-    #open = true;
-    open = false;
+    open = true;
+    #open = false;
 
     # Enable Nvidia settings menu
     nvidiaSettings = true;

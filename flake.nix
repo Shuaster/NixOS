@@ -25,6 +25,7 @@
           ./modules/packages/gaming.nix
 
           ./modules/system/default.nix
+          ./modules/system/wake.nix
 
           home-manager.nixosModules.home-manager
           {
