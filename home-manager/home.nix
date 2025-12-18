@@ -9,7 +9,7 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     ./kdeconnect.nix
-    ./waybar.nix
+    ./waybar/waybar.nix
   ];
 
   home.stateVersion = "25.11";
