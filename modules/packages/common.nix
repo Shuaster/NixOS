@@ -14,6 +14,8 @@
     bitwarden-desktop
     kdePackages.kdeconnect-kde
 
+    networkmanagerapplet
+
     # Useful Utilities
     tree
     unzip

@@ -5,6 +5,6 @@
     brave
     firefox
     #tor-browser
-    #ungoogled-chromium
+    ungoogled-chromium
   ];
 }

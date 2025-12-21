@@ -10,15 +10,15 @@
         position = "top";
         height = 40;
 
-        # output = [
-        #   "DP-1"
-        # ];
+        output = [
+          "DP-1"
+        ];
 
-        modules-left = [];
+        modules-left = [ "clock" ];
 
         modules-center = [ "hyprland/workspaces" ];
 
-        modules-right = [ "network" "clock" "tray" "custom/notification"];
+        modules-right = [ "network" "tray" "custom/notification"];
 
         clock = {
           interval = 60;
