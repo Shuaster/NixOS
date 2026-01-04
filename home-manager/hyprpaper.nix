@@ -9,12 +9,12 @@
       splash = false;
 
       preload = [
-        "/home/joshua/Pictures/Wallpapers/casseteCover.png"
+        "/home/joshua/Pictures/Wallpapers/wallpaper"
       ];
 
       wallpaper = [
-        "DP-1,/home/joshua/Pictures/Wallpapers/casseteCover.png"
-        "HDMI-A-1,/home/joshua/Pictures/Wallpapers/casseteCover.png"
+        "DP-1,/home/joshua/Pictures/Wallpapers/wallpaper"
+        "HDMI-A-1,/home/joshua/Pictures/Wallpapers/wallpaper"
       ];
     };
   };

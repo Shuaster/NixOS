@@ -39,7 +39,7 @@
 
       helios-laptop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        moduels = [
+        modules = [
           ./hosts/laptop/configuration.nix
 
           ./modules/hardware/default.nix

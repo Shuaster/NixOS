@@ -4,5 +4,7 @@
     ../home.nix
     
     ./bash.nix
+
+    ./hyprlock.nix
   ];
 }
