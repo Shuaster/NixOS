@@ -6,7 +6,6 @@
 
   imports = [
     ./hypridle.nix
-    #./hyprlock.nix
     ./hyprpaper.nix
     ./kdeconnect.nix
     ./waybar/waybar.nix
