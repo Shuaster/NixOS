@@ -12,6 +12,7 @@
     hyprlock # Lock Screen
     hyprpaper # Wallpaper Service
     hyprshot # Screenshot Service
+    hyprsunset # Screen Colour Temperature Tool
     hyprviz # GUI Hyprland Configurator
 
     kitty # Hyprland Terminal Emulator

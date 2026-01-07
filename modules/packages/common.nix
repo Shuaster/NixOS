@@ -8,6 +8,12 @@
     openssh
     wget
 
+    socat
+
+    obsidian
+
+    cifs-utils # SMB Utilities
+
     # Editors
     vscodium
 
