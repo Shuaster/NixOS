@@ -11,7 +11,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable Services for Power Profile Management
-  services.power-profiles-daemon.enable = true;
   services.tlp.enable = true;
 
   # Enable Backlight Adjustment
