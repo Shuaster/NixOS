@@ -1,0 +1,39 @@
+{ lib, inputs, outputs, ... }: {
+  nixpkgs = {
+    overlays = [
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.stable-packages
+    ];
+
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+    };
+  };
+
+  nix = {
+    settings = {
+      # Enable Nix Flakes
+      experimental-features = "nix-command flakes";
+      
+      # Set users that are allowed to use the flake command
+      trusted-users = [
+        "root"
+        "joshua"
+      ];
+    };
+
+    # Set automatic garbage collection for anything older than 15 days
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 15d";
+    };
+
+    optimise.automatic = true;
+    registry = 
+      (lib.mapAttrs (_: flake: {inherit flake;}))
+      ((lib.filterAttrs (_: lib.isType "flake")) inputs);
+    nixPath = ["/etc/nix/path"];
+  };
+}
