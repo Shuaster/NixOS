@@ -1,4 +1,4 @@
-{ config, inputs, outputs, lib, pkgs, ... }:
+{ config, inputs, lib, pkgs, ... }:
 
 {
   imports =
@@ -13,7 +13,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos-media"; # Define your hostname.
+  networking.hostName = "media-center"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -53,16 +53,6 @@
   };
 
   services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.joshua = {
-    isNormalUser = true;
-    description = "Joshua";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
 
   # Install firefox.
   programs.firefox.enable = true;

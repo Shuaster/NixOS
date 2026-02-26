@@ -12,7 +12,8 @@
 
   home.stateVersion = "24.05";
 
-  home.packages = [
+  # The home.packages options allows you to install Nix packages into your environment
+  home.packages = with pkgs; [
 
   ];
 

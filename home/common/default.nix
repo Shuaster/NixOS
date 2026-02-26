@@ -19,6 +19,6 @@
       
       # Disables warning when config changes haven't yet been commited to the respository
       warn-dirty = false;
-    }
-  }
+    };
+  };
 }
