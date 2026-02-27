@@ -9,6 +9,8 @@
       "networkManager"
       "audio"
       "video"
+      "input"
+      "gamepad"
     ];
 
     packages = [inputs.home-manager.packages.${pkgs.system}.default];
