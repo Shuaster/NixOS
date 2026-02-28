@@ -15,8 +15,8 @@
     };
 
     desktop = {
-      hyprland.enable = false;
-      wayland.enable = false;
+      hyprland.enable = true;
+      wayland.enable = true;
     };
   };
 }

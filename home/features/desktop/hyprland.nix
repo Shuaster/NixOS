@@ -47,12 +47,6 @@ in {
         };
 
         decoration = {
-          # "col.shadow" = "rgba(1e202966)";
-          # drop_shadow = true;
-          # shadow_range = 60;
-          # shadow_offset = "1 2";
-          # shadow_render_power = 3;
-          # shadow_scale = 0.97;
           rounding = 8;
           blur = {
             enabled = true;
@@ -96,10 +90,48 @@ in {
 
         "$mainMod" = "SUPER";
 
+        "$fileManager" = "nautilus";
+
+        # Workspace Keybinds will stay in host home file
         bind = [
           "$mainMod, return, exec, kitty -e fish -c 'neofetch; exec fish'"
           "$mainMod, M, exit"
           "$mainMod, C, killactive"
+          "$mainMod, E, exec, $fileManager"
+          "$mainMod, V, togglefloating"
+          "$mainMod, P, pseudo" # Dwindle Layout Only
+          "$mainMod, J, togglesplit" # Dwindle Layout Only
+          "$mainMod, L, exec, hyprlock"
+
+          "$mainMod, left, movewindow, l"
+          "$mainMod, right, movewindow, r"
+
+          # Move Window Focus
+          "ALT_L, Tab, cyclenext, visible"
+          "ALT_L SHIFT, Tab, cyclenext, prev visible"
+        ];
+
+        bindel = [
+          ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-"
+          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+          ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+          ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+        ];
+
+        bindl = [
+          # Multimedia Controls
+          ", XF86AudioPause, exec, playerctl play-pause"
+          ", XF86AudioPlay, exec, playerctl play-pause"
+          ", XF86AudioNext, exec, playerctl next"
+          ", XF86AudioPrev, exec, playerctl previous"
+        ];
+
+        bindm = [
+          # Move/Resize Windows with Mouse
+          "$mainMod, mouse:272, resizewindow"
+          "$mainMod, mouse:273, movewindow"
         ];
       };
 

@@ -62,6 +62,7 @@
     consoleLogLevel = 3;
     initrd.verbose = false;
     kernelParams = [
+      "splash"
       "quiet"
       "udev.log_level=3"
       "systemd.show_status=auto"
@@ -71,10 +72,6 @@
     # Press a key during startup to show the bootloader list
     loader.timeout = 0;
   };
-
-  
-
-
 
   users.defaultUserShell = pkgs.fish;
 }
