@@ -84,7 +84,7 @@ in {
 
         gestures = {
           workspace_swipe_distance = 300;
-          workspace_swipe_invert = false;
+          workspace_swipe_invert = true;
           workspace_swipe_cancel_ratio = "0.5";
         };
 

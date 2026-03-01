@@ -41,6 +41,14 @@
 
   services.xserver.libinput.enable = true;
 
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr
+    ];
+  };
+
   programs.firefox.enable = true;
   programs.fish.enable = true;
 
