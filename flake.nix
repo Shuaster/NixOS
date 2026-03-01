@@ -30,6 +30,10 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/media-center ];
         };
+        zenbook-laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/zenbook-laptop ];
+        };
       };
 
       homeConfigurations = {
@@ -37,6 +41,11 @@
           pkgs = nixpkgs.legacyPackages."x86_64-linux";
           extraSpecialArgs = { inherit inputs outputs; };
           modules = [ ./home/joshua/media-center.nix ];
+        };
+        "joshua@zenbook-laptop" = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."x86_64-linux";
+          extraSpecialArgs = { inherit inputs outputs; };
+          modules = [ ./home/joshua/zenbook-laptop.nix];
         };
       };
     };
