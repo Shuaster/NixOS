@@ -1,6 +1,7 @@
 { pkgs, lib, inputs, outputs, ... }: {
   imports = [
     ./users
+    ./fonts.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
