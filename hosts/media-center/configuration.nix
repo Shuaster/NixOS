@@ -29,7 +29,6 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
   services.xserver.videoDrivers = [ "modesetting" ];
@@ -59,7 +58,7 @@
   services.displayManager = {
     sddm = {
       enable = true;
-      wayland = true;
+      wayland.enable = true;
     };
     # defaultSession = "";
     autoLogin = {
