@@ -23,7 +23,26 @@ in {
               control = true;
             };
           }
+          # Disable Blank Window
+          {
+            id = "zen-new-unsynced-window";
+            disabled = true;
+          }
+          # Private Window with Ctrl+Shift+N
+          {
+            id = "key_privatebrowsing";
+            key = "n";
+            modifiers = {
+              control = true;
+              shift = true;
+            };
+          }
         ];
+
+        # Activation will fail if the Zen Browser shortcuts version
+        # doesn't match, preventing silent breakage after Zen Browser
+        # updates. Find version in about:config as zen.keyboard.shortcuts.version
+        keyboardShortcutsVersion = 16;
       };
 
       policies = {
