@@ -52,6 +52,15 @@
   programs.firefox.enable = true;
   programs.fish.enable = true;
 
+  # Enable SDDM Login Manager and set Hyprland as default Session
+  programs.hyprland.enable = true;
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+    defaultSession = "hyprland-uwsm";
+  };
 
   environment.systemPackages = with pkgs; [
     git

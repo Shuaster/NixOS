@@ -56,6 +56,18 @@
     ];
   };
 
+  services.displayManager = {
+    sddm = {
+      enable = true;
+      wayland = true;
+    };
+    # defaultSession = "";
+    autoLogin = {
+      enable = true;
+      user = "joshua";
+    };
+  };
+
   # Enable Steam with Gamescope Support
   programs.steam = {
     enable = true;
