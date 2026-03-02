@@ -39,7 +39,7 @@
     #jack.enable = true;
   };
 
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   hardware.graphics = {
     enable = true;

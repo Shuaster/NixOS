@@ -1,10 +1,11 @@
-{ config, ... }: {
+{ config, inputs, ... }: {
   imports = [
     ../common
     ../features/cli
     ../features/content
     ../features/desktop
     ../features/gaming
+    ../features/productivity
     ./home.nix
   ];
 
@@ -17,6 +18,10 @@
     desktop = {
       hyprland.enable = true;
       wayland.enable = true;
+    };
+
+    productivity = {
+      zen-browser.enable = true;
     };
   };
 
