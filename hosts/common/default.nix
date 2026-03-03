@@ -77,6 +77,7 @@
     # Hide the OS choice for the bootloader
     # Press a key during startup to show the bootloader list
     loader.timeout = 0;
+    loader.limine.maxGenerations = 10;
   };
 
   users.defaultUserShell = pkgs.fish;

@@ -13,10 +13,5 @@
       fish.enable = true;
       neofetch.enable = true;
     };
-
-    desktop = {
-      hyprland.enable = false;
-      wayland.enable = false;
-    };
   };
 }
