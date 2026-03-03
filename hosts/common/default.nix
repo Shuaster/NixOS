@@ -54,6 +54,19 @@
   };
 
   boot = {
+    # Use latest Kernel
+    kernelPackages = pkgs.linuxPackages_latest;
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+
+      # Hide the OS choice for the bootloader
+      # Press a key during startup to show the bootloader list
+      timeout = 0;
+      limine.maxGenerations = 10;
+    };
+
     # Sets themed boot animation
     plymouth = {
       enable = true;
@@ -73,11 +86,6 @@
       "udev.log_level=3"
       "systemd.show_status=auto"
     ];
-
-    # Hide the OS choice for the bootloader
-    # Press a key during startup to show the bootloader list
-    loader.timeout = 0;
-    loader.limine.maxGenerations = 10;
   };
 
   users.defaultUserShell = pkgs.fish;

@@ -5,13 +5,6 @@
       ./hardware-configuration.nix
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernal
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   # Define Hostname
   networking.hostName = "zenbook-laptop";
 
@@ -41,15 +34,6 @@
 
   services.libinput.enable = true;
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      rocmPackages.clr
-    ];
-  };
-
-  programs.firefox.enable = true;
   programs.fish.enable = true;
 
   # Enable SDDM Login Manager and set Hyprland as default Session
@@ -65,7 +49,6 @@
   environment.systemPackages = with pkgs; [
     git
     vscodium
-    # inputs.zen-browser.packages."${stdenv.hostPlatform.system}".twilight
   ];
 
   system.stateVersion = "25.11";

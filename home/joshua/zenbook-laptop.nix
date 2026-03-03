@@ -21,6 +21,7 @@
     };
 
     productivity = {
+      onlyoffice.enable = true;
       zen-browser.enable = true;
     };
   };
