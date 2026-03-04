@@ -11,7 +11,7 @@ in {
       enable = true;
 
       font.name = "dejavu_fonts";
-      font.size = 14;
+      font.size = 12;
 
       themeFile = "Chalk";
     };
