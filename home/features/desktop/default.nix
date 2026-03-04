@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./hyprland.nix
+    ./vicinae.nix
     ./wayland.nix
   ];
 

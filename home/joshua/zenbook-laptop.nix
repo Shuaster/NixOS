@@ -12,11 +12,13 @@
   features = {
     cli = {
       fish.enable = true;
+      kitty.enable = true;
       neofetch.enable = true;
     };
 
     desktop = {
       hyprland.enable = true;
+      vicinae.enable = true;
       wayland.enable = true;
     };
 

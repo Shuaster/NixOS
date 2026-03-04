@@ -3,7 +3,7 @@
 with lib;
 let
   cfg = config.features.productivity.zen-browser;
-  addons = inputs.firefox-addons.packages.${pkgs.system};
+  addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 in {
   options.features.productivity.zen-browser.enable = mkEnableOption "enable Zen Browser package and configuration";
 
@@ -86,24 +86,5 @@ in {
         };
       };
     };
-
-    # programs.zen-browser.profiles.default = {
-    #   keyboardShortcuts = [
-    #     # Toggle Compact Mode with Ctrl+\
-    #     {
-    #       id = "zen-compact-mode-toggle";
-    #       key = "\\";
-    #       modifiers = {
-    #         control = true;
-    #       };
-    #     }
-    #   ];
-    # };
-
-
-
-    # home.packages = with pkgs; [
-    #   inputs.zen-browser.packages."${system}".twilight
-    # ];
   };
 }

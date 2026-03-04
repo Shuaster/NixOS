@@ -15,9 +15,10 @@ in {
         };
 
         exec-once = [
-          "waybar"
           "hyprpaper"
           "hypridle"
+          "vicinae server"
+          "waybar"
         ];
 
         env = [
@@ -54,7 +55,7 @@ in {
             passes = 3;
           };
           active_opacity = 0.9;
-          inactive_opacity = 0.5;
+          inactive_opacity = 0.75;
         };
 
         animations = {
@@ -91,6 +92,7 @@ in {
         "$mainMod" = "SUPER";
 
         "$fileManager" = "nautilus";
+        "$menu" = "vicinae toggle";
 
         # Workspace Keybinds will stay in host home file
         bind = [
@@ -109,6 +111,10 @@ in {
           # Move Window Focus
           "ALT_L, Tab, cyclenext, visible"
           "ALT_L SHIFT, Tab, cyclenext, prev visible"
+        ];
+
+        bindr = [
+          "$mainMod, SUPER_L, exec, $menu"
         ];
 
         bindel = [
