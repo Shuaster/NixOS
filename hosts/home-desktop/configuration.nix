@@ -1,21 +1,21 @@
 { config, pkgs, inputs, ... }: {
   imports = [
-      ./hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
-  # Define Hostname
-  networking.hostName = "zenbook-laptop";
+  # Definte Hostname
+  networking = {
+    hostname = "home-desktop";
+    networkmanager.enable = true;
+  };
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+  # Select Internationalisation Properties
+  il8n.defaultLocale = "en_CA.UTF-8";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
-
-  # Enable CUPS to print documents.
+  # Enable CUPS to print documents
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Enable sound with Pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -23,11 +23,11 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
   };
 
   services.libinput.enable = true;
+
+  programs.fish.enable = true;
 
   # Enable SDDM Login Manager and set Hyprland as default Session
   programs.hyprland.enable = true;
@@ -38,6 +38,4 @@
     };
     defaultSession = "hyprland-uwsm";
   };
-
-  system.stateVersion = "25.11";
-}
+} 

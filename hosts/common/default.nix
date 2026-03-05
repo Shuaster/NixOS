@@ -97,5 +97,10 @@
     };
   };
 
+  # Set Time Zone Automatically
+  services.automatic-timezoned.enable = true;
+
+  # Use Fish Shell
+  programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 }
