@@ -13,11 +13,12 @@
     cli = {
       fish.enable = true;
       kitty.enable = true;
-      neofetch = true;
+      fastfetch.enable = true;
     };
 
     desktop = {
       hyprland.enable = true;
+      udiskie.enable = true;
       vicinae.enable = true;
       wayland.enable = true;
     };

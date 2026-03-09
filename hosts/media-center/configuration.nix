@@ -5,15 +5,12 @@
   imports = [
     ./hardware-configuration.nix
   ];
-  
+
   # Define Hostname
   networking.hostName = "media-center";
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Toronto";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
@@ -102,6 +99,6 @@
     git
     vscodium
   ];
-  
+
   system.stateVersion = "25.11";
 }

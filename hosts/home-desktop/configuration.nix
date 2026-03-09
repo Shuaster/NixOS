@@ -38,4 +38,4 @@
     };
     defaultSession = "hyprland-uwsm";
   };
-} 
+}

@@ -2,7 +2,7 @@
   imports = [
     ./fish.nix
     ./kitty.nix
-    ./neofetch.nix
+    ./fastfetch.nix
   ];
 
   home.packages = with pkgs; [

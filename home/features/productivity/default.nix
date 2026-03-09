@@ -9,7 +9,8 @@
   home.packages = with pkgs; [
     obs-studio # Video Recording & Live Streaming
     obsidian # Markdown Editor
-    rawtherapee # Raw Photo Editor
+    stable.rawtherapee # Raw Photo Editor
+    #argyllcms
     vscodium # VS Code with disabled telemetry
     zed-editor # High performance code editor
   ];

@@ -11,7 +11,7 @@
   features = {
     cli = {
       fish.enable = true;
-      neofetch.enable = true;
+      fastfetch.enable = true;
     };
   };
 }

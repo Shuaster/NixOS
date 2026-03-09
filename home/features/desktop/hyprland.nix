@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 with lib;
-let 
+let
   cfg = config.features.desktop.hyprland;
 in {
   options.features.desktop.hyprland.enable = mkEnableOption "hyprland config";
@@ -96,7 +96,7 @@ in {
 
         # Workspace Keybinds will stay in host home file
         bind = [
-          "$mainMod, return, exec, kitty -e fish -c 'neofetch; exec fish'"
+          "$mainMod, return, exec, kitty -e fish -c 'fastfetch; exec fish'"
           "$mainMod, M, exit"
           "$mainMod, C, killactive"
           "$mainMod, E, exec, $fileManager"

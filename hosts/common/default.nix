@@ -32,7 +32,7 @@
     settings = {
       # Enable Nix Flakes
       experimental-features = "nix-command flakes";
-      
+
       # Set users that are allowed to use the flake command
       trusted-users = [
         "root"
@@ -47,12 +47,13 @@
     };
 
     optimise.automatic = true;
-    registry = 
+    registry =
       (lib.mapAttrs (_: flake: {inherit flake;}))
       ((lib.filterAttrs (_: lib.isType "flake")) inputs);
     nixPath = ["/etc/nix/path"];
   };
 
+  # Configure Boot Settings
   boot = {
     # Use latest Kernel
     kernelPackages = pkgs.linuxPackages_latest;
@@ -88,6 +89,7 @@
     ];
   };
 
+  # Enable Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -97,10 +99,21 @@
     };
   };
 
+  # Enable Tailscale
+  services.tailscale = {
+    enable = true;
+  };
+
   # Set Time Zone Automatically
   services.automatic-timezoned.enable = true;
 
   # Use Fish Shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+
+  # Enable GVFS to improve filesystem compatibility
+  services.gvfs.enable = true;
+
+  # Enable UDisks2 to manage removable media
+  services.udisks2.enable = true;
 }
