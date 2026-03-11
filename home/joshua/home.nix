@@ -15,8 +15,9 @@
   # The home.packages options allows you to install Nix packages into your environment
   home.packages = with pkgs; [
     kdePackages.dolphin
-    kitty
     nautilus
+    libheif # HEIC Image Preview Library
+    libheif.out # HEIC Image Preview Library
     nemo
     thunar
   ];

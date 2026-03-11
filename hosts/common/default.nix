@@ -7,6 +7,7 @@
 
   environment.pathsToLink = [
     "/share/applications"
+    "/share/thumbnailers"
     "/share/xdg-desktop-portal"
   ];
 
