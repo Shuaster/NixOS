@@ -44,10 +44,16 @@
       overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
+        app-server = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/app-server ];
+        };
+
         media-center = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/media-center ];
         };
+
         zenbook-laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ ./hosts/zenbook-laptop ];

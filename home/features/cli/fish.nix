@@ -18,6 +18,7 @@ in {
       shellAbbrs = {
         ".." = "cd ..";
         "..." = "cd ../..";
+        "config" = "cd /home/joshua/.nixos-config";
         "rebuild" = "sudo nixos-rebuild switch --flake ~/.nixos-config#(hostname)";
       };
     };
