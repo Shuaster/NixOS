@@ -1,15 +1,22 @@
-{ pkgs, lib, inputs, outputs, ... }: {
+{ config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
     ./users
     ./fonts.nix
+    inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  environment.pathsToLink = [
-    "/share/applications"
-    "/share/thumbnailers"
-    "/share/xdg-desktop-portal"
-  ];
+  environment = {
+    pathsToLink = [
+      "/share/applications"
+      "/share/thumbnailers"
+      "/share/xdg-desktop-portal"
+    ];
+
+    systemPackages = [
+      inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
+  };
 
   home-manager = {
     useUserPackages = true;
@@ -54,7 +61,7 @@
     nixPath = ["/etc/nix/path"];
   };
 
-  # Configure Boot Settings
+# Configure Boot Settings
   boot = {
     # Use latest Kernel
     kernelPackages = pkgs.linuxPackages_latest;
@@ -90,7 +97,7 @@
     ];
   };
 
-  # Enable Bluetooth
+# Enable Bluetooth
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -100,21 +107,26 @@
     };
   };
 
-  # Enable Tailscale
+# Enable Tailscale with Authentication Key
   services.tailscale = {
     enable = true;
+    authKeyFile = config.age.secrets.tailscale-auth-key.path;
   };
 
-  # Set Time Zone Automatically
+  age.secrets.tailscale-auth-key = {
+    file = ../../secrets/tailscale-auth-key.age;
+  };
+
+# Set Time Zone Automatically
   services.automatic-timezoned.enable = true;
 
-  # Use Fish Shell
+# Use Fish Shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  # Enable GVFS to improve filesystem compatibility
+# Enable GVFS to improve filesystem compatibility
   services.gvfs.enable = true;
 
-  # Enable UDisks2 to manage removable media
+# Enable UDisks2 to manage removable media
   services.udisks2.enable = true;
 }

@@ -100,5 +100,11 @@
     vscodium
   ];
 
+  services.openssh = {
+    enable = true;
+    settings.PermitRootLogin = "no";
+    allowSFTP = true;
+  };
+
   system.stateVersion = "25.11";
 }
