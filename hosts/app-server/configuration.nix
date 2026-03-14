@@ -1,11 +1,26 @@
-{ config, pkgs, inputs, ... }: {
+{ config, lib, pkgs, inputs, ... }:
+
+let
+  zfsCompatibleKernelPackages = lib.filterAttrs (
+    name: kernelPackages:
+    (builtins.match "linux_[0-9]+_[0-9]+" name) != null
+    && (builtins.tryEval kernelPackages).success
+    && (!kernelPackages.${config.boot.zfs.package.kernelModuleAttribute}.meta.broken)
+  ) pkgs.linuxKernel.packages;
+  latestKernelPackage = lib.last (
+    lib.sort (a: b: (lib.versionOlder a.kernel.version b.kernel.version)) (
+      builtins.attrValues zfsCompatibleKernelPackages
+    )
+  );
+in
+{
   imports = [
     ./hardware-configuration.nix
   ];
 
 # Networking
   networking = {
-    hostname = "app-server";
+    hostName = "app-server";
     firewall = {
       enable = true;
       allowedTCPPorts = [ 22 ];
@@ -50,6 +65,8 @@
   };
 
 # Packages
+  boot.kernelPackages = latestKernelPackage;
+
   environment.systemPackages = with pkgs; [
     git
     htop
