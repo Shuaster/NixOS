@@ -18,6 +18,9 @@ in
     ./hardware-configuration.nix
   ];
 
+  boot.supportedFilesystems = [ "zfs" ];
+  networking.hostId = "370acf59";
+
 # Networking
   networking = {
     hostName = "app-server";
@@ -65,7 +68,7 @@ in
   };
 
 # Packages
-  boot.kernelPackages = latestKernelPackage;
+  boot.kernelPackages = lib.mkForce latestKernelPackage;
 
   environment.systemPackages = with pkgs; [
     git
