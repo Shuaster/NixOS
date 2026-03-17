@@ -26,8 +26,8 @@ in
     hostName = "app-server";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 ];
-      trustedInterfaces = [ "tailscale0" ];
+      # allowedTCPPorts = [ 22 ];
+      # trustedInterfaces = [ "tailscale0" ];
     };
   };
 

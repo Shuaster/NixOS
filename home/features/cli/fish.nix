@@ -20,6 +20,7 @@ in {
         "..." = "cd ../..";
         "config" = "cd /home/joshua/.nixos-config";
         "rebuild" = "sudo nixos-rebuild switch --flake ~/.nixos-config#(hostname)";
+        "rebuild-server" = "nixos-rebuild switch --flake ~/.nixos-config#app-server --target-host joshua@app-server --sudo --ask-sudo-password";
       };
     };
   };
